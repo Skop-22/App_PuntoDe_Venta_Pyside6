@@ -1,4 +1,8 @@
-#Aplicacion Punto de Venta
+# Aplicacion Punto de Venta
+
+Esta abplicación fue crada para visualizar los productos las ventas los precios o compras 
+cada compra lo puede balorar el usuario ademas que su busqueda facilita su uso
+
 ---
 ## Creacion de Un usario y inicio de sesión
 Para la creación de un usuario se manda a llamar al widget user 
@@ -42,9 +46,9 @@ La iformacion se guarda en `self.dato` por defecato el valor es 0
 
 ```
 > En el anterior codigo se guarda la informacion del usuario o lo convierte en 0
-### Regitro
+## Regitro
 ![Registro](doc_imagenes/UserRegistro.png "Registro")
-###inicio de sesión 
+### inicio de sesión 
 ![Inicio](doc_imagenes/InicioUser.png "Inicio")
 ---
 ## Tipo de usuario
@@ -56,6 +60,7 @@ La iformacion se guarda en `self.dato` por defecato el valor es 0
 ![mesnajes](doc_imagenes/Mensajes.png "Mensajes")
 > Tipo 1 Mensajes del propietario del mensaje
 > Tipo 2 Mensajes de otros usarios
+
 Los tipos de Mensajes se definen en el siguiente parte del codigo
 ```
     def MensUser1(self,widget,texto):

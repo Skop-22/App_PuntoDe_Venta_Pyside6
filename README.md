@@ -54,8 +54,8 @@ La iformacion se guarda en `self.dato` por defecato el valor es 0
     Cada usario puede dejar un mensaje como se puede observar en la siguiente imagen
     hay dos tipos de mensajes 
 ![mesnajes](doc_imagenes/Mensajes.png "Mensajes")
-    > Tipo 1 Mensajes del propietario del mensaje
-    > Tipo 2 Mensajes de otros usarios
+> Tipo 1 Mensajes del propietario del mensaje
+> Tipo 2 Mensajes de otros usarios
 Los tipos de Mensajes se definen en el siguiente parte del codigo
 ```
     def MensUser1(self,widget,texto):

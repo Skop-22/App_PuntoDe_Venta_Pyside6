@@ -94,7 +94,7 @@ Los tipos de Mensajes se definen en el siguiente parte del codigo
 ---
 ## Widget de productos
     Los widgets se observan de la siguiente manera
-![WidgetEspecial](doc_imagenes/WidgetVentana.png "WidgetEspecial")
+![WidgetEspecial](doc_imagenes/WidgetVenta.png "WidgetEspecial")
 El widget funciona con geometry  lo que hace geometry es posicionarlo dentro 
 del widget seleccionado
  > self.PrinWin.widget_6 vendador

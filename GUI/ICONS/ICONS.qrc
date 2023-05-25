@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="ICONS">
+    <file>agregar-usuario.png</file>
+    <file>carrito-de-compras.png</file>
+    <file>cuadricula.png</file>
+    <file>maximizar.png</file>
+    <file>minimizar-signo.png</file>
+    <file>hogar.png</file>
+    <file>cerrar.png</file>
+    <file>menu-hamburguesa.png</file>
+    <file>usuario.png</file>
+  </qresource>
+</RCC>

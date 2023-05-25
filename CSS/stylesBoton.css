@@ -1,0 +1,15 @@
+QPushButton{
+    border-radius: 9px;
+    background-color: rgba(30,30,30,125);
+    padding: 7px;
+}
+QPushButton:hover{
+    border-radius: 9px;
+    background-color: rgba(50,50,50,190);
+    padding: 3px;
+}
+QPushButton:pressed{
+    border-radius: 9px;
+    background-color: rgba(25,25,25,80);
+    padding: 8px;
+}

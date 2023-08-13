@@ -9,7 +9,6 @@ from GUI.ui_MenuPrin import *
 from GUI.ICONS.ICONS_rc import *
 #-------------------------------------------------------------------------------------------
 from PySide6 import QtCore
-from PySide6.QtCore import QParallelAnimationGroup
 from functools import partial
 import sys
 
@@ -146,6 +145,7 @@ class WindowPrin(QMainWindow):
 
     def buscarProducto(self):
         Busqueda=self.PrinWin.lineEdit.text()
+        print(Busqueda)
         if self.PrinWin.radioButton_2.isChecked():
             self.botonesDeProduct(self.PrinWin.frame_8,BuscarProducto(Busqueda,"Vendedor"))
         elif self.PrinWin.radioButton.isChecked():

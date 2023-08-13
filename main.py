@@ -27,7 +27,7 @@ class WindowPrin(QMainWindow):
         self.ListaDeButons=[]#lista de botones
         self.ListaDeWidgets=[]#lista de widgets
         self.ListaDeWidgetsMensaje=[]
-        self.dato=0#la informaion del usuario se gurda en esta variable
+        self.dato=0#la informaión del usuario se guarda en esta variable
         self.contadorDeCompras=0
         self.contadorDeMensjes=0
         self.configcolor=[0,0,0,0]
@@ -175,7 +175,7 @@ class WindowPrin(QMainWindow):
 
             while (len(Data)>len(self.ListaDeWidgets)):                
                 self.ListaDeWidgets.insert(self.i,AnimaButtonHover(widget))#crea un boton animado en la lista 
-                self.ListaDeButons.insert(self.i,AnimaButtonHover(widget))#crea un boton en la lista
+                self.ListaDeButons.insert(self.i,QPushButton(widget))#crea un boton en la lista
                 self.ListaDeButons[self.i].setObjectName("Boton_"+str(self.i))
                 self.ListaDeWidgets[self.i].setObjectName(str(self.i))#nombre
                 with open("CSS/stylesBoton.css","r") as f:

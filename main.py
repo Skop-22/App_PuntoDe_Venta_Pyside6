@@ -145,7 +145,6 @@ class WindowPrin(QMainWindow):
 
     def buscarProducto(self):
         Busqueda=self.PrinWin.lineEdit.text()
-        print(Busqueda)
         if self.PrinWin.radioButton_2.isChecked():
             self.botonesDeProduct(self.PrinWin.frame_8,BuscarProducto(Busqueda,"Vendedor"))
         elif self.PrinWin.radioButton.isChecked():
@@ -396,7 +395,6 @@ class WindowPrin(QMainWindow):
                         if user == self.dato[1]:
                             self.MensUser1(self.ListaDeWidgetsMensaje[self.contadorDeMensjes],aux)    
                             self.ListaDeWidgetsMensaje[self.contadorDeMensjes].setGeometry(QRect(90, tamano, 240, 71+TamTaxto))
-                            print(self.ListaDeWidgetsMensaje[self.contadorDeMensjes].pos())
                         else: 
                             self.Mensuser2(self.ListaDeWidgetsMensaje[self.contadorDeMensjes],aux)
                             self.ListaDeWidgetsMensaje[self.contadorDeMensjes].setGeometry(QRect(10, tamano, 240, 71+TamTaxto))

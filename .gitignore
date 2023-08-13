@@ -1,3 +1,6 @@
+#Base de datos
+DataBase/BaseDeDatos.db
+#archivos inecesarios
 DataBase/__pycache__
 FunWindow/__pycache__
 FunWindow/AnimacionButton/__pycache__

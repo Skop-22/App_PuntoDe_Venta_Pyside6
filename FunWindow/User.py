@@ -24,6 +24,7 @@ class UsuarioGUI(QDialog):
         self.prin.pushButton_10.clicked.connect(lambda: self.CerrarSesion())
         self.prin.pushButton_7.clicked.connect(lambda: self.ModificarInfoDelUser())
         self.prin.pushButton_8.clicked.connect(lambda: self.CancelarACTU())
+        self.prin.pushButton_11.clicked.connect(lambda: self.cerrarVentana())
         self.prin.pushButton_9.clicked.connect(lambda: self.ActuliUser())
         self.prin.comboBox_2.currentTextChanged.connect(lambda: self.Estilos())
         self.prin.pushButton_2.setDefault(True)
@@ -187,3 +188,7 @@ class UsuarioGUI(QDialog):
         self.AnimacionEnGrupo.addAnimation(self.animationWidget(self.prin.frame_4,250,(0,0,0,264),(0,0,362,264),False,True,'geometry'))
         self.AnimacionEnGrupo.start()
 
+    def cerrarVentana(self):
+        if self.prin.frame_5.x() == 0:
+            self.CancelarACTU()
+        self.close()

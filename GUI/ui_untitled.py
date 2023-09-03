@@ -395,7 +395,6 @@ class Ui_UsuarioGUI(object):
         self.retranslateUi(UsuarioGUI)
         self.pushButton_4.clicked.connect(UsuarioGUI.close)
         self.pushButton.clicked.connect(UsuarioGUI.close)
-        self.pushButton_11.clicked.connect(UsuarioGUI.close)
 
         self.stackedWidget.setCurrentIndex(0)
 

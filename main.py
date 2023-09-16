@@ -44,6 +44,19 @@ class WindowPrin(QMainWindow):
                     e.accept()
         # ---------------------------------------------------------------------------------------
         self.PrinWin.label.mouseMoveEvent = moWindow
+        # se manda a llamar el metodo para crear la lista de los productos
+        self.botonesDeProduct(self.PrinWin.Casa, None)
+        # ----------------------------------------------------------
+        self.botonesPrincipales()
+        # ----------------------------------------------------------
+        self.stiloDelaVentnaPrincipal()
+        
+
+    def stiloDelaVentnaPrincipal(self):
+        with open("CSS/stylesMenuPrinw.css", "r") as f:
+            self.setStyleSheet(f.read())
+
+    def botonesPrincipales(self):
         self.PrinWin.pushButton.clicked.connect(lambda: self.InfoDelUser())
         self.PrinWin.pushButton_3.clicked.connect(lambda: self.Maxi())
         self.PrinWin.pushButton_11.clicked.connect(lambda: self.guardarVenta())
@@ -69,12 +82,7 @@ class WindowPrin(QMainWindow):
             lambda: self.eliminarCompras())
         self.Ticket.Tiketwind.pushButton_5.clicked.connect(
             lambda: self.AjusteDeContador())
-        # se manda a llamar el metodo para crear la lista de los productos
-        self.botonesDeProduct(self.PrinWin.Casa, None)
-        # ----------------------------------------------------------
-        with open("CSS/stylesMenuPrinw.css", "r") as f:
-            # abre el archivo de estilos para el menu principal
-            self.setStyleSheet(f.read())
+
 
     def mousePressEvent(self, event):
         self.clickPosition = event.globalPos()

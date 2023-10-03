@@ -10,6 +10,7 @@ from GUI.ICONS.ICONS_rc import *
 # -------------------------------------------------------------------------------------------
 from PySide6 import QtCore
 from functools import partial
+import gc
 import sys
 
 
@@ -58,7 +59,8 @@ class WindowPrin(QMainWindow):
 
     def botonesPrincipales(self):
         self.PrinWin.pushButton.clicked.connect(lambda: self.InfoDelUser())
-        self.PrinWin.pushButton_3.clicked.connect(lambda: self.Maxi())
+        self.PrinWin.
+        ushButton_3.clicked.connect(lambda: self.Maxi())
         self.PrinWin.pushButton_11.clicked.connect(lambda: self.guardarVenta())
         self.PrinWin.pushButton_12.clicked.connect(
             lambda: self.EliminarVen(self.PrinWin.pushButton_12))
@@ -266,6 +268,7 @@ class WindowPrin(QMainWindow):
                 self.ListaDeWidgets[i].close()
                 self.ListaDeButons.pop(i)
                 self.ListaDeWidgets.pop(i)
+                gc.collect()
 
     def ProductoVen(self, data):
         # si el vendedor que inicio sesion es el que desea elimniar el producto

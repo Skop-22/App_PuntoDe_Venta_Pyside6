@@ -59,8 +59,7 @@ class WindowPrin(QMainWindow):
 
     def botonesPrincipales(self):
         self.PrinWin.pushButton.clicked.connect(lambda: self.InfoDelUser())
-        self.PrinWin.
-        ushButton_3.clicked.connect(lambda: self.Maxi())
+        self.PrinWin.pushButton_3.clicked.connect(lambda: self.Maxi())
         self.PrinWin.pushButton_11.clicked.connect(lambda: self.guardarVenta())
         self.PrinWin.pushButton_12.clicked.connect(
             lambda: self.EliminarVen(self.PrinWin.pushButton_12))

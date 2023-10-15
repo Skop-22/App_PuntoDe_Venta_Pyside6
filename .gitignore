@@ -1,9 +1,8 @@
 #archivos inecesarios
 DataBase/__pycache__
-FunWindow/__pycache__
-FunWindow/AnimacionButton/__pycache__
+FunWin/__pycache__
 GUI/__pycache__
-GUI/GUIMens/__pycache__
+GUI/interfaceUI/__pycache__
 GUI/ICONS/__pycache__
 __pycache__
 

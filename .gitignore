@@ -1,8 +1,11 @@
 #archivos inecesarios
 DataBase/__pycache__
+Rutas/__pycache__
 FunWin/__pycache__
+FunWin/Clientes/__pycache__
+FunWin/Vendedor/__pycache__
 GUI/__pycache__
-GUI/interfaceUI/__pycache__
-GUI/ICONS/__pycache__
+GUI/Ventanas/__pycache__
+GUI/archivosDiseno_ui/__pycache__
 __pycache__
 

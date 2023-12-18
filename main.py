@@ -10,7 +10,6 @@ from GUI.ICONS.ICONS_rc import *
 # -------------------------------------------------------------------------------------------
 from PySide6 import QtCore
 from functools import partial
-import gc
 import sys
 
 
@@ -267,7 +266,6 @@ class WindowPrin(QMainWindow):
                 self.ListaDeWidgets[i].close()
                 self.ListaDeButons.pop(i)
                 self.ListaDeWidgets.pop(i)
-                gc.collect()
 
     def ProductoVen(self, data):
         # si el vendedor que inicio sesion es el que desea elimniar el producto

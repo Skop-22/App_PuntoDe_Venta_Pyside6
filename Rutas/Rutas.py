@@ -1,5 +1,5 @@
 from qfluentwidgets import (FluentWindow, FluentIcon,
-                            setTheme, Theme,)
+                            setTheme, Theme)
 from PySide6.QtWidgets import QApplication
 import sys
 
@@ -16,3 +16,6 @@ from FunWin.Vendedor.HomeVendedor import *
 
 #   -> Cliente
 from FunWin.Cliente.HomeCliente import *
+
+
+

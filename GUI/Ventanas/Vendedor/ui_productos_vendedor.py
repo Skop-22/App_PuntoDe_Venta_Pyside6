@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'productos_vendedorYokvfh.ui'
+## Form generated from reading UI file 'productos_vendedorOLlnwm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -24,7 +24,7 @@ class Ui_productos_vendedor(object):
     def setupUi(self, productos_vendedor):
         if not productos_vendedor.objectName():
             productos_vendedor.setObjectName(u"productos_vendedor")
-        productos_vendedor.resize(755, 494)
+        productos_vendedor.resize(772, 476)
         self.gridLayout = QGridLayout(productos_vendedor)
         self.gridLayout.setObjectName(u"gridLayout")
         self.TableWidget = TableWidget(productos_vendedor)

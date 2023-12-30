@@ -16,7 +16,7 @@ from GUI.Ventanas.Cliente.ui_Cliente import *
 from FunWin.Vendedor.HomeVendedor import *
 from FunWin.Vendedor.ProductosVendedor import *
 
-#   -> Cliente
+#    -> Cliente
 from FunWin.Cliente.HomeCliente import *
 
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'VendedorvtJsgA.ui'
+## Form generated from reading UI file 'VendedorfcoXHy.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -21,7 +21,7 @@ class Ui_Vendedor(object):
     def setupUi(self, Vendedor):
         if not Vendedor.objectName():
             Vendedor.setObjectName(u"Vendedor")
-        Vendedor.resize(900, 560)
+        Vendedor.resize(723, 461)
 
         self.retranslateUi(Vendedor)
 

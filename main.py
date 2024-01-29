@@ -19,6 +19,7 @@ class VentanaPrincipal (FluentWindow):
     def menuCliente(self):
         self.cliente = HomeCliente()
         self.addSubInterface(self.cliente, FluentIcon.HOME_FILL, "Cliente")
+        print('prueba')
         pass
 
 if __name__ == "__main__":

@@ -17,6 +17,7 @@ class VentanaPrincipal (FluentWindow):
 
     # configuración de la interfas grafica del usuario tipo cliente
     def menuCliente(self):
+        #probando los cambios 
         self.cliente = HomeCliente()
         self.addSubInterface(self.cliente, FluentIcon.HOME_FILL, "Cliente")
         pass

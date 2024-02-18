@@ -20,7 +20,6 @@ class VentanaPrincipal (FluentWindow):
         #probando los cambios 
         self.cliente = HomeCliente()
         self.addSubInterface(self.cliente, FluentIcon.HOME_FILL, "Cliente")
-        pass
 
 if __name__ == "__main__":
     setTheme(Theme.DARK)#tema 

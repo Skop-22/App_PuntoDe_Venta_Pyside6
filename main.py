@@ -5,7 +5,6 @@ class VentanaPrincipal (FluentWindow):
         super().__init__(parent)
         self.resize(900,560)
         self.setWindowTitle("Punto De Venta")
-        # self.menuCliente()
         self.menuVendedor()
 
     #configuración de la interfas grafica del usuario tipo vendedor
@@ -14,12 +13,6 @@ class VentanaPrincipal (FluentWindow):
         self.addSubInterface(self.vendedor, FluentIcon.HOME_FILL, "Vendedor")
         self.vendedor_productos = ProductosVendedor()
         self.addSubInterface(self.vendedor_productos, FluentIcon.SETTING, "Productos")
-
-    # configuración de la interfas grafica del usuario tipo cliente
-    def menuCliente(self):
-        #probando los cambios 
-        self.cliente = HomeCliente()
-        self.addSubInterface(self.cliente, FluentIcon.HOME_FILL, "Cliente")
 
 if __name__ == "__main__":
     setTheme(Theme.DARK)#tema 

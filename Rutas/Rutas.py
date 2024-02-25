@@ -8,16 +8,8 @@ import sys
 from GUI.Ventanas.Vendedor.ui_Vendedor import *
 from GUI.Ventanas.Vendedor.ui_productos_vendedor import *
 
-#    -> Clientes
-from GUI.Ventanas.Cliente.ui_Cliente import *
-
 #  ------------> Funsionalidad de las ventanas
 #    -> Vendedor
 from FunWin.Vendedor.HomeVendedor import *
 from FunWin.Vendedor.ProductosVendedor import *
-
-#    -> Cliente
-from FunWin.Cliente.HomeCliente import *
-
-
 

@@ -10,7 +10,7 @@ class VentanaPrincipal (FluentWindow):
     #configuración de la interfas grafica del usuario tipo vendedor
     def menuVendedor(self):
         self.vendedor = HomeVendedor()
-        self.addSubInterface(self.vendedor, FluentIcon.HOME_FILL, "Vendedor")
+        self.addSubInterface(self.vendedor, FluentIcon.HOME_FILL, "Home")
         self.vendedor_productos = ProductosVendedor()
         self.addSubInterface(self.vendedor_productos, FluentIcon.SETTING, "Productos")
 

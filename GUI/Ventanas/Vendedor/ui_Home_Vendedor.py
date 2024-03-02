@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Home_VendedorWDZdzO.ui'
+## Form generated from reading UI file 'Home_VendedorVZDubv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -29,15 +29,17 @@ class Ui_HomeVendedor(object):
         self.gridLayout_2.setHorizontalSpacing(20)
         self.gridLayout_2.setVerticalSpacing(25)
         self.gridLayout_2.setContentsMargins(10, 20, 20, 20)
-        self.SearchLineEdit = SearchLineEdit(HomeVendedor)
-        self.SearchLineEdit.setObjectName(u"SearchLineEdit")
+        self.busqueda = SearchLineEdit(HomeVendedor)
+        self.busqueda.setObjectName(u"busqueda")
 
-        self.gridLayout_2.addWidget(self.SearchLineEdit, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.busqueda, 0, 0, 1, 1)
 
-        self.gridLayout = QGridLayout()
-        self.gridLayout.setObjectName(u"gridLayout")
+        self.ordenadorProducto = QGridLayout()
+        self.ordenadorProducto.setSpacing(10)
+        self.ordenadorProducto.setObjectName(u"ordenadorProducto")
+        self.ordenadorProducto.setContentsMargins(10, 10, 10, 10)
 
-        self.gridLayout_2.addLayout(self.gridLayout, 1, 0, 1, 1)
+        self.gridLayout_2.addLayout(self.ordenadorProducto, 1, 0, 1, 1)
 
 
         self.retranslateUi(HomeVendedor)

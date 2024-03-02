@@ -8,7 +8,8 @@ from qfluentwidgets import (
                             BodyLabel
 
 )
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QLabel
+from PySide6.QtCore import QEasingCurve, QPropertyAnimation
 import sys
 
 #  ------------> Ventana Ventanas

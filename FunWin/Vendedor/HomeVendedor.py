@@ -10,7 +10,6 @@ class HomeVendedor(Ui_HomeVendedor,QWidget):
 
     def windgetProduc(self,widgets):
         for i in range(11):
-            print("pronando configuracion git")
             widget = BodyLabel(f"Widget {i+1}")
             widget.setAlignment(Qt.AlignCenter)#alinia al centro
             self.gridLayout.addWidget(widget, i // 4, i % 4)        

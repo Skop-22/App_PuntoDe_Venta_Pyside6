@@ -9,7 +9,6 @@ class HomeVendedor(Ui_HomeVendedor,QWidget):
         self.windgetProduc(widgetProduc)
 
     def windgetProduc(self,widgets):
-        print(widgets)
         for i in range(11):
             widget = BodyLabel(f"Widget {i+1}")
             widget.setAlignment(Qt.AlignCenter)#alinia al centro

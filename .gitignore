@@ -1,15 +1,14 @@
 #archivos inecesarios
 #->archivos incesarios de la database
 DataBase/__pycache__
+DataBase/Tienda.db-journal
 #->archivos incesarios de rutas
 Rutas/__pycache__
 #->archivos incesarios de las funcionalidades de la ventana
 FunWin/__pycache__
-FunWin/Clientes/__pycache__
 FunWin/Vendedor/__pycache__
 #->archivos incesarios de las interfaces graficas
 GUI/__pycache__
-GUI/Ventanas/Cliente/__pycache__
 GUI/archivosDiseno_ui/Vendedor/__pycache__
 __pycache__
 

@@ -187,85 +187,93 @@ class WindowPrin(QMainWindow):
                                   BuscarProducto(Busqueda, "Cantidad"))
 
     def botonesDeProduct(self, widget, actuali):
-        self.i = 0  # reinisia el contador para la lista de prodcutos
-        self.contadorY = 0  # contador para la posicion en x
-        self.contadorX = 0  # contador para la posición en y
-        if actuali == None:
-            Data = Ventas()  # venta en general
-        else:
-            Data = actuali  # dependiendo de la busqueda del cliente
-        if Data != []:  # si la lista de productos no esta vacia
-            while (len(Data) == len(self.ListaDeWidgets) or len(self.ListaDeWidgets) != 0):
-                # para la actualizacion de productos se eliminan los anteriores widget
-                i = len(self.ListaDeWidgets)-1
-                self.ListaDeButons[i].close()  # cierra la posicion
-                self.ListaDeWidgets[i].close()
-                self.ListaDeButons.pop(i)  # lo elimina de la ListaDeButons
-                self.ListaDeWidgets.pop(i)
-
-            while (len(Data) > len(self.ListaDeWidgets)):
-                self.ListaDeWidgets.insert(self.i, AnimaButtonHover(
-                    widget))  # crea un boton animado en la lista
-                self.ListaDeButons.insert(self.i, QPushButton(
-                    widget))  # crea un boton en la lista
-                self.ListaDeButons[self.i].setObjectName("Boton_"+str(self.i))
-                self.ListaDeWidgets[self.i].setObjectName(
-                    str(self.i))  # nombre
-                with open("CSS/stylesBoton.css", "r") as f:
-                    self.ListaDeWidgets[self.i].setStyleSheet(
-                        f.read())  # estilos para cada boton
-                if widget != self.PrinWin.Casa:
-                    # tamaño del widget
-                    widget.setMinimumSize(QSize(1300, self.contadorY+415))
-                    self.ListaDeWidgets[self.i].setGeometry(
-                        QRect((315*self.contadorX)+90, self.contadorY+75, 200, 300))  # posicion
-                    self.ListaDeButons[self.i].setGeometry(
-                        QRect((315*self.contadorX)+115, self.contadorY+320, 150, 35))
-                elif widget == self.PrinWin.Casa:
-                    # tamaño del widget
-                    widget.setMinimumSize(QSize(1300, self.contadorY+315))
-                    self.ListaDeWidgets[self.i].setGeometry(
-                        QRect((315*self.contadorX)+60, self.contadorY+15, 200, 300))  # posicion
-                    self.ListaDeButons[self.i].setGeometry(
-                        QRect((315*self.contadorX)+85, self.contadorY+260, 150, 35))
-                # conectar cada uno de los metos con la posicion de cada boton
-                if widget == self.PrinWin.frame_8:  # si es cliente
-                    self.ListaDeWidgets[self.i].clicked.connect(
-                        partial(self.CompraProduc, Data[self.i]))
-                    self.ListaDeButons[self.i].clicked.connect(
-                        partial(self.CompraProduc, Data[self.i]))
-                    self.ListaDeButons[self.i].setText("Comprar")
-                elif widget == self.PrinWin.widget_6:  # si es vendedor
-                    self.ListaDeWidgets[self.i].clicked.connect(
-                        partial(self.ProductoVen, Data[self.i]))
-                    self.ListaDeButons[self.i].clicked.connect(
-                        partial(self.ProductoVen, Data[self.i]))
-                    self.ListaDeButons[self.i].setText("Seleccionar")
-                else:
-                    self.ListaDeWidgets[self.i].clicked.connect(
-                        partial(self.ComentarioProduc, Data[self.i]))
-                    self.ListaDeButons[self.i].clicked.connect(
-                        partial(self.ComentarioProduc, Data[self.i]))
-                    self.ListaDeButons[self.i].setText("Comentarios")
-                self.ListaDeWidgets[self.i].setVisible(True)  # se visualiza
-                self.ListaDeButons[self.i].setVisible(True)
-                # se agregan caracteristicas de la vista
-                self.WidgetInfoProduc(
-                    self.ListaDeWidgets[self.i], Data[self.i])
-                if self.contadorX == 3:  # contador con cada salto
-                    self.contadorY += 315
-                    self.contadorX = 0
-                else:
-                    self.contadorX += 1
-                self.i += 1
-        else:
-            # si la lista de ventas no existe se elimina los widgets creados con la anterior busqueda
-            while (len(self.ListaDeWidgets) != 0):
-                i = len(self.ListaDeWidgets)-1
-                self.ListaDeButons[i].close()
-                self.ListaDeWidgets[i].close()
-                self.ListaDeButons.pop(i)
-                self.ListaDeWidgets.pop(i)
+        self.contador = 0
+        data = Ventas()
+        contador =0
+        for venta in data:
+            productos = self.WidgetInfoProduc(venta)
+            self.PrinWin.gridLayout_24.addLayout(productos,contador,0,1,1)
+            contador=contador+1
+        
+        # self.i = 0  # reinisia el contador para la lista de prodcutos
+        # self.contadorY = 0  # contador para la posicion en x
+        # self.contadorX = 0  # contador para la posición en y
+        # if actuali == None:
+        #     Data = Ventas()  # venta en general
+        # else:
+        #     Data = actuali  # dependiendo de la busqueda del cliente
+        # if Data != []:  # si la lista de productos no esta vacia
+        #     while (len(Data) == len(self.ListaDeWidgets) or len(self.ListaDeWidgets) != 0):
+        #         # para la actualizacion de productos se eliminan los anteriores widget
+        #         i = len(self.ListaDeWidgets)-1
+        #         self.ListaDeButons[i].close()  # cierra la posicion
+        #         self.ListaDeWidgets[i].close()
+        #         self.ListaDeButons.pop(i)  # lo elimina de la ListaDeButons
+        #         self.ListaDeWidgets.pop(i)
+        #
+        #     while (len(Data) > len(self.ListaDeWidgets)):
+        #         self.ListaDeWidgets.insert(self.i, AnimaButtonHover(
+        #             widget))  # crea un boton animado en la lista
+        #         self.ListaDeButons.insert(self.i, QPushButton(
+        #             widget))  # crea un boton en la lista
+        #         self.ListaDeButons[self.i].setObjectName("Boton_"+str(self.i))
+        #         self.ListaDeWidgets[self.i].setObjectName(
+        #             str(self.i))  # nombre
+        #         with open("CSS/stylesBoton.css", "r") as f:
+        #             self.ListaDeWidgets[self.i].setStyleSheet(
+        #                 f.read())  # estilos para cada boton
+        #         if widget != self.PrinWin.Casa:
+        #             # tamaño del widget
+        #             widget.setMinimumSize(QSize(1300, self.contadorY+415))
+        #             self.ListaDeWidgets[self.i].setGeometry(
+        #                 QRect((315*self.contadorX)+90, self.contadorY+75, 200, 300))  # posicion
+        #             self.ListaDeButons[self.i].setGeometry(
+        #                 QRect((315*self.contadorX)+115, self.contadorY+320, 150, 35))
+        #         elif widget == self.PrinWin.Casa:
+        #             # tamaño del widget
+        #             widget.setMinimumSize(QSize(1300, self.contadorY+315))
+        #             self.ListaDeWidgets[self.i].setGeometry(
+        #                 QRect((315*self.contadorX)+60, self.contadorY+15, 200, 300))  # posicion
+        #             self.ListaDeButons[self.i].setGeometry(
+        #                 QRect((315*self.contadorX)+85, self.contadorY+260, 150, 35))
+        #         # conectar cada uno de los metos con la posicion de cada boton
+        #         if widget == self.PrinWin.frame_8:  # si es cliente
+        #             self.ListaDeWidgets[self.i].clicked.connect(
+        #                 partial(self.CompraProduc, Data[self.i]))
+        #             self.ListaDeButons[self.i].clicked.connect(
+        #                 partial(self.CompraProduc, Data[self.i]))
+        #             self.ListaDeButons[self.i].setText("Comprar")
+        #         elif widget == self.PrinWin.widget_6:  # si es vendedor
+        #             self.ListaDeWidgets[self.i].clicked.connect(
+        #                 partial(self.ProductoVen, Data[self.i]))
+        #             self.ListaDeButons[self.i].clicked.connect(
+        #                 partial(self.ProductoVen, Data[self.i]))
+        #             self.ListaDeButons[self.i].setText("Seleccionar")
+        #         else:
+        #             self.ListaDeWidgets[self.i].clicked.connect(
+        #                 partial(self.ComentarioProduc, Data[self.i]))
+        #             self.ListaDeButons[self.i].clicked.connect(
+        #                 partial(self.ComentarioProduc, Data[self.i]))
+        #             self.ListaDeButons[self.i].setText("Comentarios")
+        #         self.ListaDeWidgets[self.i].setVisible(True)  # se visualiza
+        #         self.ListaDeButons[self.i].setVisible(True)
+        #         # se agregan caracteristicas de la vista
+        #         self.WidgetInfoProduc(
+        #             self.ListaDeWidgets[self.i], Data[self.i])
+        #         if self.contadorX == 3:  # contador con cada salto
+        #             self.contadorY += 315
+        #             self.contadorX = 0
+        #         else:
+        #             self.contadorX += 1
+        #         self.i += 1
+        # else:
+        #     # si la lista de ventas no existe se elimina los widgets creados con la anterior busqueda
+        #     while (len(self.ListaDeWidgets) != 0):
+        #         i = len(self.ListaDeWidgets)-1
+        #         self.ListaDeButons[i].close()
+        #         self.ListaDeWidgets[i].close()
+        #         self.ListaDeButons.pop(i)
+        #         self.ListaDeWidgets.pop(i)
 
     def ProductoVen(self, data):
         # si el vendedor que inicio sesion es el que desea elimniar el producto
@@ -308,10 +316,10 @@ class WindowPrin(QMainWindow):
                 (data[2], data[4]), self.contadorDeCompras, 'agregar', 0)
 
     # para cada lista de wiget creados se agrega los elementos para la visualizción de la invormacion de la venta
-    def WidgetInfoProduc(self, widget, info):
-        self.gridLayout_2 = QGridLayout(widget)
+    def WidgetInfoProduc(self, info):
+        self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.widget_2 = QWidget(widget)
+        self.widget_2 = QWidget()
         self.widget_2.setObjectName(u"widget_2")
         self.gridLayout = QGridLayout(self.widget_2)
         self.gridLayout.setObjectName(u"gridLayout")
@@ -330,13 +338,14 @@ class WindowPrin(QMainWindow):
             41, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
         self.gridLayout.addItem(self.horizontalSpacer_2, 0, 2, 1, 1)
         self.gridLayout_2.addWidget(self.widget_2, 0, 0, 1, 1)
-        self.label = QLabel(widget)
+        self.label = QLabel()
         self.label.setObjectName(u"label")
         self.label.setText("Producto: "+info[2] +
                            "\nTipo: "+info[3] +
                            "\nPrecio: $ "+str(info[4])+" MX" +
                            "\nCantidad: "+str(info[5]) +
                            "\nVendedor: "+info[1])
+        self.gridLayout_2.addWidget(self.label)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -351,6 +360,7 @@ class WindowPrin(QMainWindow):
         self.verticalSpacer = QSpacerItem(
             22, 41, QSizePolicy.Minimum, QSizePolicy.Preferred)
         self.gridLayout_2.addItem(self.verticalSpacer, 2, 0, 1, 1)
+        return self.gridLayout_2
 
     def guardarVenta(self):
         if self.dato[3] == "Vendedor":

@@ -9,7 +9,7 @@ from GUI.ui_MenuPrin import *
 from GUI.ICONS.ICONS_rc import *
 # -------------------------------------------------------------------------------------------
 from PySide6 import QtCore
-from functools import partial
+# from functools import partial
 import sys
 
 
@@ -191,9 +191,12 @@ class WindowPrin(QMainWindow):
         data = Ventas()
         contador =0
         for venta in data:
-            productos = self.WidgetInfoProduc(venta)
-            self.PrinWin.gridLayout_24.addLayout(productos,contador,0,1,1)
-            contador=contador+1
+            print(venta)
+            pass
+            # productos = self.WidgetInfoProduc(venta)
+            # productos.setObjectName(f"productoVenta_{venta[0]}")
+            # self.PrinWin.gridLayout_24.addLayout(productos,contador,0,1,1)
+            # contador=contador+1
         
         # self.i = 0  # reinisia el contador para la lista de prodcutos
         # self.contadorY = 0  # contador para la posicion en x
@@ -360,7 +363,6 @@ class WindowPrin(QMainWindow):
         self.verticalSpacer = QSpacerItem(
             22, 41, QSizePolicy.Minimum, QSizePolicy.Preferred)
         self.gridLayout_2.addItem(self.verticalSpacer, 2, 0, 1, 1)
-        return self.gridLayout_2
 
     def guardarVenta(self):
         if self.dato[3] == "Vendedor":
